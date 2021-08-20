@@ -5,10 +5,6 @@ var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var specialChar = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
 var numbers = "0123456789";
 var storedValue = [];
-var confirmLowerCase = false;
-var confirmUpperCase = false;
-var confirmSpecial = false;
-var confirmNumbers = false;
 
 
 function generatePassword() {
@@ -18,7 +14,7 @@ function generatePassword() {
   }
 
   var password = "";
-  var possibleChoices = "",
+  var possibleChoices = "";
 
   var confirmLowerCase = confirm("Do you want Lower Case letters in your password?");
   if (confirmLowerCase) {
@@ -52,17 +48,13 @@ function generatePassword() {
     possibleChoices = possibleChoices.concat(numbers);
   }
 
-  for (var i=0; i < length; i++) {
+  for (var i=0; i < length - storedValue.length; i++) {
     var random = Math.floor(Math.random() * possibleChoices.length);
-    password += lowerCase[random];
+    password += possibleChoices [random];
   }
 
-
+  password += storedValue.join ('');
     
-  
-
-
-  //Code goes here -all code goes here, no need to place it anywhere else
   return password;
 }
 
