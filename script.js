@@ -9,7 +9,7 @@ var storedValue = [];
 
 function generatePassword() {
   var length = prompt("How many characters do you want your password?");
-  if (length < 8 || length > 128 ) {
+  while (length < 8 || length > 128) {
     length = prompt("The number must be between 8 and 128, please re-enter.");
   }
 
@@ -18,7 +18,7 @@ function generatePassword() {
 
   var confirmLowerCase = confirm("Do you want Lower Case letters in your password?");
   if (confirmLowerCase) {
-    var random = Math.floor(Math.random () * lowerCase.length);
+    var random = Math.floor(Math.random() * lowerCase.length);
     var lowerCaseChoice = lowerCase[random];
     storedValue.push(lowerCaseChoice);
     possibleChoices = possibleChoices.concat(lowerCase);
@@ -26,7 +26,7 @@ function generatePassword() {
 
   var confirmUpperCase = confirm("Do you want Upper Case letters in your password?");
   if (confirmUpperCase) {
-    var random = Math.floor(Math.random () * upperCase.length);
+    var random = Math.floor(Math.random() * upperCase.length);
     var upperCaseChoice = upperCase[random];
     storedValue.push(upperCaseChoice);
     possibleChoices = possibleChoices.concat(upperCase);
@@ -34,7 +34,7 @@ function generatePassword() {
 
   var confirmSpecial = confirm("Do you want any special characters in your password?");
   if (confirmSpecial) {
-    var random = Math.floor(Math.random () * specialChar.length);
+    var random = Math.floor(Math.random() * specialChar.length);
     var specialChoice = specialChar[random];
     storedValue.push(specialChoice);
     possibleChoices = possibleChoices.concat(specialChar);
@@ -42,19 +42,19 @@ function generatePassword() {
 
   var confirmNumbers = confirm("Do you want numbers in your password?");
   if (confirmNumbers) {
-    var random = Math.floor(Math.random () * numbers.length);
+    var random = Math.floor(Math.random() * numbers.length);
     var numbersChoice = numbers[random];
     storedValue.push(numbersChoice);
     possibleChoices = possibleChoices.concat(numbers);
   }
 
-  for (var i=0; i < length - storedValue.length; i++) {
+  for (var i = 0; i < length - storedValue.length; i++) {
     var random = Math.floor(Math.random() * possibleChoices.length);
-    password += possibleChoices [random];
+    password += possibleChoices[random];
   }
 
-  password += storedValue.join ('');
-    
+  password += storedValue.join('');
+
   return password;
 }
 
@@ -63,9 +63,9 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-if (password) {
-  passwordText.value=password;
-}
+  if (password) {
+    passwordText.value = password;
+  }
 
 }
 
