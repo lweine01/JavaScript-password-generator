@@ -6,7 +6,9 @@ JavaScript Password Generator
 - [Description](#Description)
 - [Screenshot](#Screenshot)
 - [Usage](#Usage)
+- [License](#License)
 - [Language](#language)
+- [Contact](#Contact)
 
 
 ## Description
@@ -14,9 +16,16 @@ In this project I created a random password generator. When you click the genera
 
 ## Screenshot
 ![website screenshot](assets/images/screenshot.png)
+![Website screenshot including prompt](assets/images/screenshotprompt.png)
 
 ## Usage
 Allows a user to create a secure and random password.
 
+## License
+MIT
+
 ## Language
 HTML, CSS and Javascript
+
+## Contact
+LauraRWeiner@gmail.com
